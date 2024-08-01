@@ -1,0 +1,2 @@
+ashanbaig21@gmail.com,ashan,Area 5/c House no 1 block 2 korangi6 Karachi.,03472499167
+{'2024-07-27 21:59:06.209165': [['banner_big/banner6.png', 'Posh Perch', 120, 3], ['banner_big/banner1.png', 'Luxe Lounger', 100, 1]]}

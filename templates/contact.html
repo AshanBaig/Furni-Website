@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Contact Us</h1>
+								<p><a href="shop.html" class="btn btn-secondary me-2">Shop Now</a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="{{url_for('static',filename='images/couch.png')}}" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		
+		<!-- Start Contact Form -->
+		<div class="untree_co-section">
+      <div class="container">
+
+        <div class="block">
+          <div class="row justify-content-center">
+
+
+            <div class="col-md-8 col-lg-8 pb-4">
+
+
+              <div class="row mb-5">
+                
+
+                              <form action="/contact.html" method="post">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label class="text-black" for="fname">Your name</label>
+                      <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your Name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="text-black" for="email">Email address</label>
+                  <input type="email" class="form-control" placeholder="Enter your Email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group mb-5">
+                  <label class="text-black" for="message" >Message</label>
+                  <textarea name="message" class="form-control" id="message"  cols="30" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary-hover-outline" >Send Message</button>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- End Contact Form -->
+  {% endblock %}
+
+	

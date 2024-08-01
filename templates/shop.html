@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Shop</h1>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+		{% if cart_empty%}
+			<h4 style="color: red;">Your cart is empty,please purchase something to checkout!</h4>
+		{% endif %}
+		<div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+		      	<div class="row">
+
+		      		<!-- Start Row -->
+
+				<!-- Product Items -->
+				{% for i in range(len_productdetail) %}
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<form action="/handle_button" method="post">
+						<div class="product-item">
+							<!-- path, name, price, icon (small_img) -->
+							<img src="{{ url_for('static', filename=product_detail[i][0]) }}" alt="{{ product_detail[i][1] }}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">{{ product_detail[i][1]}}</h3>
+							<strong class="product-price">${{ product_detail[i][2] }}</strong>
+							<span class="icon-cross">
+								<button style="border-radius: 50%; border-width: 0; color: white; background-color: rgb(40, 40, 40); width: 20px; height: 20px;" type="submit" name="button" value="{{ i }}"><b>+</b></button>
+							</span>
+						</div>
+					</form>
+				</div>
+				{% endfor %}
+				<!-- End Product Items -->
+			</div>
+			<!-- End Row -->
+
+		      	</div>
+		    </div>
+		</div>
+		{% endblock %}

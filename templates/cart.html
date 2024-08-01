@@ -1,0 +1,197 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Start Hero Section -->
+<div class="hero">
+    <div class="container" >
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>Cart</h1>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Hero Section -->
+
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="site-blocks-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="product-thumbnail">Image</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-total">Total</th>
+                            <th class="product-Update">Update</th>
+                            <th class="product-remove">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in button_index %}
+                        <tr class='product-row' value="{{i}}">
+                            <td class="product-thumbnail">
+                                <img src="{{ url_for('static', filename=product_detail[i][0]) }}" alt="Image"
+                                class="img-fluid">
+                            </td>
+                            <td class="product-name">
+                                <h2 class="h5 text-black">{{product_detail[i][1]}}</h2>
+                            </td>
+                            <form action="/update_cart" method="post">
+                            <td>${{product_detail[i][2]}}</td>
+                            <td>
+                                {% set amount =product_detail[i][3]  %}
+                                
+                                <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                style="max-width: 120px;">
+                            <!-- <form action="/update_cart" method="post"> -->
+                                <input type="number" class="form-control text-center quantity-amount"
+                                name='quantity' value={{amount}} data-product="{{ loop.index0 }}"
+                                data-price="{{ product_detail[i][2] }}" placeholder=""
+                                aria-label="Example text with button addon" aria-describedby="button-addon1"
+                                min="1">
+                                {% set price = product_detail[i][2]*amount %}
+                            <!-- </form> -->
+                             
+                            </div>
+                        </td>
+                        <td class="product-total">${{ price }}</td>
+                        <!-- <td>
+                            <label class="Remove" style='cursor: pointer;' id="check">
+                                <input  type="checkbox" id="check"> <p class="Remove">hello</p>X
+                            </label>
+                        </td> -->
+                        <td >
+                                <input type="hidden" name="button" value="{{[ i,amount] }}">
+                                <button type="submit" style="border: 2px solid black; border-radius:30px; padding: 12px 20px;">Update</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/remove_index" method="post">
+                                <input type="hidden" name="button" value="{{ i }}">
+                                <button type="submit" style="background-color: black; color: aliceblue; border: 2px solid black; border-radius:30px; padding: 12px 20px;">Remove</button>
+                              </form>
+                              
+                        </td>
+                                            </tr>
+                        
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-5">
+                <form action="/shop.html" class="col-md-6">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+                    </div>
+                </form>
+                </div>
+                
+            </div>
+            <div class="col-md-6 pl-5">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-12 text-right border-bottom mb-5">
+                                <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <span class="text-black">Total</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black total-value">${{grand_total}}</strong>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form action="/checkout.html">
+                                <button class="btn btn-black btn-lg py-3 btn-block" type="submit">Proceed To Checkout</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script>
+    // Get all quantity input elements
+    var quantityInputs = document.querySelectorAll('.quantity-amount');
+
+    // Update the total price for a specific product
+    function updateTotalPrice(quantityInput, price) {
+        var quantity = parseInt(quantityInput.value);
+        var totalPrice = price * quantity;
+        var totalPriceElement = quantityInput.closest('tr').querySelector('.product-total');
+        if (totalPriceElement) {
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        }
+        updateSubtotal();
+    }
+
+    // Update subtotal
+    function updateSubtotal() {
+        var subtotal = 0;
+        var totalProducts = document.querySelectorAll('.product-total');
+        totalProducts.forEach(function (product) {
+            subtotal += parseFloat(product.textContent);
+        });
+        document.querySelector('.subtotal-value').textContent = subtotal.toFixed(2);
+
+        updateTotal();
+    }
+
+    // Update total price
+    function updateTotal() {
+        var subtotal = parseFloat(document.querySelector('.subtotal-value').textContent);
+        var discount = parseFloat(document.querySelector('.discount-value').textContent);
+        var total = subtotal - discount;
+        document.querySelector('.total-value').textContent = total.toFixed(2);
+    }
+
+    // Apply coupon
+    document.querySelector('.apply-coupon').addEventListener('click', function () {
+        var couponCode = document.getElementById('coupon').value;
+        var discountAmount = 20.00; // Sample discount amount
+        document.querySelector('.discount-value').textContent = discountAmount.toFixed(2);
+        updateTotal();
+    });
+
+    // // Remove cart item and update button_index
+    // let remove_button_index = [];
+    // const checkboxes = document.querySelectorAll('.Remove');
+
+    // checkboxes.forEach(function (checkbox, index) {
+    //     checkbox.addEventListener('change', function () {
+    //         if (this.checked) {
+    //             // Find the row and remove it
+    //             const productRow = this.closest('.product-row');
+    //             if (productRow) {
+
+    //                 productRow.remove(); // Remove the row
+    //             }
+    //             // Update button_index to remove the current index
+    //             remove_index=productRow.getAttribute('value')
+    //             remove_button_index.push(remove_index) // Update button_index
+    //         }
+    //     });
+    // });
+</script> -->
+
+{% endblock %}

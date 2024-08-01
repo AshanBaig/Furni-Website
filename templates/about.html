@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>About Us</h1>
+								<p><a href="shop.html" class="btn btn-secondary me-2">Shop Now</a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="{{url_for('static',filename='images/couch.png')}}" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		
+
+		<!-- Start Why Choose Us Section -->
+		<div class="why-choose-section">
+			<div class="container">
+				<div class="row justify-content-between align-items-center">
+					<div class="col-lg-6">
+						<h2 class="section-title">Why Choose Us?</h2>
+						<p>We have luxury furnishings in budget-friendly prices. Our furnitures are especially built with Oak wood in Italy. We also have customizing options. </p>
+
+						<div class="row my-5">
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{{url_for('static',filename='images/truck.svg')}}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>Fast &amp; Free Shipping</h3>
+									<p>We deliver your furnitures with care and love within 10-20 delivery days. For less hassle, please visit our shop!</p>
+								</div>
+							</div>
+
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{{url_for('static',filename='images/bag.svg')}}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>Easy to Shop</h3>
+									<p>We have a well-maintained website with all the necessary features. We also sell thorugh our social media handles. Book us now!</p>
+								</div>
+							</div>
+
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{{url_for('static',filename='images/support.svg')}}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>24/7 Support</h3>
+									<p>We don't deliver damage products and offers 24/7 customer care.</p>
+								</div>
+							</div>
+
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{{url_for('static',filename='images/return.svg')}}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>Hassle Free Returns</h3>
+									<p>We have a 14-days exchange policy. However, refund within 3 days is applicable.</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-5">
+						<div class="img-wrap">
+							<img src="{{url_for('static',filename='images/why-choose-us-img.jpg')}}" alt="Image" class="img-fluid">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- End Why Choose Us Section -->
+
+		<!-- Start Team Section -->
+		<div class="untree_co-section">
+			<div class="container">
+
+				<div class="row mb-5">
+					<div class="col-lg-5 mx-auto text-center">
+						<h2 class="section-title">Our Team</h2>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0" >
+						<img src="{{url_for('static',filename='images/asra.png')}}" class="img-fluid mb-5">
+						<h3 clas><a href="#"><span class="" style="margin: 20%;" >Asra  Siddiqui</span></a></h3>
+            <span class="d-block position mb-4" style="margin: 20%;">CS-23006</span>
+            
+           
+					</div> 
+					<!-- End Column 1 -->
+
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0" >
+						<img src="{{url_for('static',filename='images/ashan.png')}}" class="img-fluid mb-5">
+
+						<h3 clas><a href="#"><span class="" style="margin: 20%;">Ashan Baig</span> </a></h3>
+            <span class="d-block position mb-4" style="margin: 20%;">CS-23043</span>
+            
+
+					</div> 
+					<!-- End Column 2 -->
+
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0" > 	
+						<img src="{{url_for('static',filename='images/rida.jpg')}}" class="img-fluid mb-5">
+						<h3 clas><a href="#"><span class="" style="margin: 20%;">Rida Qasmi</span> </a></h3>
+            <span class="d-block position mb-4" style="margin: 20%;">CS-23004</span>
+            
+					</div> 
+					<!-- End Column 3 -->
+
+					<!-- Start Column 4 -->
+					
+
+          
+					</div> 
+					<!-- End Column 4 -->
+
+					
+
+				</div>
+			</div>
+		</div>
+		<!-- End Team Section -->
+
+		
+
+	
+		{% endblock %}

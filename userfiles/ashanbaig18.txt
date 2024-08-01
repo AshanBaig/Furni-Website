@@ -1,0 +1,3 @@
+ashanbaig18@gmail.com,ashan,Area 5/c House no 1 block 2 korangi6 Karachi.,03472499167
+{'2024-07-27 22:50:48.881847': [['banner_big/banner6.png', 'Posh Perch', 120, 6], ['banner_big/banner13.png', 'Polish Pantry', 110, 3]]}
+{'2024-07-28 00:00:16.779286': [['banner_big/banner2.png', 'Organize Oasis', 60, 4], ['banner_big/banner6.png', 'Posh Perch', 120, 1]]}

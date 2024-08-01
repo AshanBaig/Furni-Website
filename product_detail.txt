@@ -1,0 +1,13 @@
+banner_big/banner0.png,Chic Charm,70,1
+banner_big/banner1.png,Luxe Lounger,100,1
+banner_big/banner2.png,Organize Oasis,60,1
+banner_big/banner3.png,Comfort Cove,75,1
+banner_big/banner4.png,Sleek Storage,100,1
+banner_big/banner5.png,Glow Haven,50,1
+banner_big/banner6.png,Posh Perch,120,1
+banner_big/banner7.png,Heritage Holder,140,1
+banner_big/banner8.png,Urban Retreat,45,1
+banner_big/banner9.png,Grand Glide,80,1
+banner_big/banner11.png,Marvel Table,35,1
+banner_big/banner12.png,Modern Sanctuary,90,1
+banner_big/banner13.png,Polish Pantry,110,1

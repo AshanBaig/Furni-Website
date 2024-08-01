@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Start Hero Section -->
+<div class="hero">
+    <div class="container" >
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>ADMIN</h1>
+                </div>
+            </div>
+            <form action="/home">
+
+                <button class="btn btn-secondary me-2" style="background-color: #3b5d50;color: aliceblue;"  id="b">Logout</button>
+              </form>
+            <div class="col-lg-7">
+                 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Hero Section -->
+
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="site-blocks-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="product-thumbnail">Image</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>    
+                            <th class="product-remove">Remove</th>
+                        </tr>
+                    </thead>
+                    <form action="/admin.html" method="post">
+                        <input type="hidden" name="button" value="add">
+                        <button type="submit" name='button'style="border: 2px solid black; border-radius:30px; padding: 12px 20px;margin-left: 20%;width: 60%" value="add">ADD MORE PRODUCT</button>
+                    </form>
+                    <tbody>
+                        {% for i in range(len_productdetail) %}
+                        <tr class='product-row' value="{{i}}">
+                            <td class="product-thumbnail">
+                                <img src="{{ url_for('static', filename=product_detail[i][0]) }}" alt="Image"
+                                class="img-fluid">
+                            </td>
+                            <td class="product-name">
+                                <h2 class="h5 text-black">{{product_detail[i][1]}}</h2>
+                            </td>
+                        <form action="/admin.html" method="post">
+                            <td>{{product_detail[i][2]}}</td>
+                
+                        <td >
+                                <input type="hidden" name="button" value="{{i}}">
+                                <button type="submit" name="button"style="border: 2px solid black; border-radius:30px; padding: 12px 20px;" >Remove</button>
+                            </form>
+                        </td>
+                                            </tr>
+                        
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+            
+        </div>
+
+      {% endblock %}

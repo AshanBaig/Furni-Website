@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+  <form action="/admin.html" method="post" enctype="multipart/form-data">
+
+    <h1 class="h3 mb-3 fw-normal" style="padding-left: 30%;margin-top: 8%;"><b> Fill the entry</b></h1>
+    <!-- <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <input type="text" class="form-control" id="path" name='path' placeholder="Enter the path of Image" required title="please the path of Image" onkeypress="return event.charCode!=44">
+       
+      </div> -->
+    <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <!-- <label for="path">Select an image to upload:</label>
+        <input type="file" id="path" name="path" accept="image/png, image/jpeg" required> -->
+        <label for="path">Select an image to upload:</label>
+        <input type="file"  id="path" name="path" accept="image/png, image/jpeg" required><br><br>
+
+    </div>
+      <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <input type="text" class="form-control" id="pname" name='pname' placeholder="Enter Product's Name" required title="please Enter Product's Name" onkeypress="return event.charCode!=44">
+        <!-- <label for="floatingPassword" style="padding-left: 30%" ><b>Password</b></label> -->
+      </div>
+      <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <input type="number" class="form-control" id="pprice" name='pprice' placeholder="Enter Product's Price" required title="please Enter Product's Price" min="1" onkeypress="return (event.charCode != 46 && event.charCode != 101 && event.charCode != 69)" >
+        <!-- <label for="floatingPassword" style="padding-left: 30%" ><b>Password</b></label> -->
+      </div>
+    <div  style="width: 55%; padding-left: 40%;padding-top: 20px; padding-bottom: 100px;">
+    <button class="btn btn-primary w-100 py-2" type="submit"  >Update </button>
+    </div>
+  </form>	{% endblock %}

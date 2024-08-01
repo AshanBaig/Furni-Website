@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Checkout</h1>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		<div class="untree_co-section">
+		    <div class="container">
+		      <div class="row mb-5">
+		        <div class="col-md-12">
+		        </div>
+		      </div>
+		      <div class="row">
+		            </div>
+
+		            
+		          <div class="row mb-5">
+		            <div class="col-md-12">
+		              <h2 class="h3 mb-3 text-black">Your Order</h2>
+		              <div class="p-3 p-lg-5 border bg-white">
+		                <table class="table site-block-order-table mb-5">
+		                  <thead>
+		                    <th>Product</th>
+		                    <th>Total</th>
+		                  </thead>
+		                  <tbody>
+		                    {% for i in button_index %}
+							<tr>
+		                      <td>{{product_detail[i][1]}} <strong class="mx-2">x</strong> {{product_detail[i][3]}}</td>
+		                      <td>${{product_detail[i][2]*product_detail[i][3]}}</td>
+		                    </tr>
+							{% endfor %}
+		                    <tr>
+		                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+		                      <td class="text-black font-weight-bold"><strong>${{subtotal}}</strong></td>
+		                    </tr>
+		                  </tbody>
+		                </table>
+           
+						<h1 class="h6 mb-2"><b>Cash on Delivery</b> </h1>
+		                <!-- <div class="border p-3 mb-3"> -->
+		                <div class="form-group" style="padding-left: 30%;">
+							<form action="/thankyou.html">
+                                <button class="btn btn-black btn-lg py-3 btn-block" type="submit">Place Order</button>
+                                </form>
+		                  <!-- <button class="btn btn-black btn-lg py-3 btn-block"  onclick="window.location='thankyou.html'">Place Order</button> -->
+		                </div>
+
+		              </div>
+		            </div>
+		          </div>
+
+		        </div>
+		      </div>
+		      <!-- </form> -->
+		    </div>
+		  </div>
+
+		  {% endblock %}

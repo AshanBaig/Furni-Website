@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+  <form action="/UserID" method="post">
+    <h1 class="h3 mb-3 fw-normal" style="padding-left: 30%;margin-top: 8%;"><b>Please Login</b></h1>
+    {% if b==1 %}
+    <div  style="width: 70%; padding-left: 30% ;padding-bottom: 5px;color: red;">
+      <p>the username or password must be incorrect, try again or<a href="/signup.html">Signup</a> </p>
+      </div>
+    {% elif b==2 %}
+    <div  style="width: 70%; padding-left: 30% ;padding-bottom: 5px;color: green;">
+      <p>Please Login or <a href="\signup.html">Signup</a> Before proceeding to checkout </p>
+      </div>
+    {% endif %}
+
+    <div  style="width: 70%; padding-left: 30% ;padding-bottom: 5px;">
+    <!-- <label for="floatingInput" style="padding-left: 30%"><b>Email address </b></label> -->
+      
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email ">
+    </div>
+    <div  style="width: 70%; padding-left: 30%;">
+      <input type="password" class="form-control" id="floatingPassword" name='password' placeholder="Enter your  Password" onkeypress="return event.charCode!=32">
+    </div>
+    <div  style="width: 55%; padding-left: 40%;padding-top: 20px; padding-bottom: 10px;">
+    <button class="btn btn-primary w-100 py-2" type="submit"  >Login </button>
+    </div>
+    <div  style="width: 80%; padding-left: 40%;padding-top: 10px; padding-bottom: 100px;"><p >if you dont have an account,please <a href="signup.html">Signup</a>
+    </p></div>
+  </form>	{% endblock %}

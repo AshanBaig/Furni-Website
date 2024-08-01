@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+  <form action="/signup.html" method="post">
+    <h1 class="h3 mb-3 fw-normal"  style="padding-left: 30%;margin-top: 8%;"><b>Please SignUp</b></h1>
+    {% if a==1 %}
+        <div  style="width: 70%; padding-left: 30% ;padding-bottom: 5px;color: red;">
+            <!-- <label for="floatingInput" style="padding-left: 30%"><b>Email address </b></label> -->
+            <p>this user already exists please <a href="UserID">login</a>  or use another email</p>
+            <!-- <p>this user already exists please <a href="/login.html">login</a>  or use another email</p> -->
+            </div>
+    {% endif %}
+    {% if a==2 %}
+        <div  style="width: 70%; padding-left: 30% ;padding-bottom: 5px;color: red;">
+            <!-- <label for="floatingInput" style="padding-left: 30%"><b>Email address </b></label> -->
+            <p>Don't use special character and your email must end with '@gmail.com' </p>
+            <!-- <p>this user already exists please <a href="/login.html">login</a>  or use another email</p> -->
+            </div>
+    {% endif %}
+    <div  style="width: 70%; padding-left: 30% ;padding-bottom: 5px;">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email must end with '@gmail.com' " required>
+    </div>
+    <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+      <input type="password" class="form-control" id="floatingPassword" name='password' placeholder="Enter your Password" onkeypress="return event.charCode!=32" required title="Password should have atleast 8 characters!" required pattern=".{8,}">
+      <!-- <label for="floatingPassword" style="padding-left: 30%" ><b>Password</b></label> -->
+    </div>
+    <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <input type="text" class="form-control" id="name" name='name' placeholder="Enter your Name" required title="please enter your name">
+        <!-- <label for="floatingPassword" style="padding-left: 30%" ><b>Password</b></label> -->
+      </div>
+      <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <input type="text" class="form-control" id="address" name='address' placeholder="Enter your Address" required title="please enter your Address" >
+        <!-- <label for="floatingPassword" style="padding-left: 30%" ><b>Password</b></label> -->
+      </div>
+      <div  style="width: 70%; padding-left: 30%;padding-bottom: 5px;">
+        <input type="text" class="form-control" id="contact_number" name='contact_number' placeholder="Enter your Contact Number" required title="please enter your contact number" required pattern="\d+{11,}" >
+        <!-- <label for="floatingPassword" style="padding-left: 30%" ><b>Password</b></label> -->
+      </div>
+
+    <!-- <div class="form-check text-start my-3">
+      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Remember me
+      </label>
+    </div> -->
+    <div  style="width: 55%; padding-left: 40%;padding-top: 20px; padding-bottom: 100px;">
+    <button class="btn btn-primary w-100 py-2" type="submit"  >SignUp </button>
+    </div>
+  </form>	{% endblock %}
